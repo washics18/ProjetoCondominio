@@ -1,13 +1,18 @@
 # ProjetoCondominio
 
-Sobre o projeto
+Sobre o projeto :
 Uma aplicação para informar a permissão mais alta de cada usuário por condominio.
 
-Tecnologias utilizadas
+Tecnologias utilizadas :
+
 Back end
+
 Java
+
 Base de dados arquivo txt. 
-clonar repositório
+
+clonar repositório : 
+
 git clone https://github.com/washics18/ProjetoCondominio
 
 Execução da aplicação:
@@ -19,7 +24,8 @@ Execução da aplicação:
  - Cole ou digite um e-mail do arquivo base.txt e Ok
 
 
-Autor
+Autor :
+
 Washington Carlos da Silva
 
 https://www.linkedin.com/in/washington-carlos-4a32b481/
