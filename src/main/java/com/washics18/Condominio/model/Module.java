@@ -28,12 +28,12 @@ public class Module {
 		
 		ArrayList<Module>  aModules = new ArrayList<Module>();
 	
-		for (String m : SYSTEM_MODULES) {
-			Permission p1 = findModulePermission(m, alModuleFirst);
-			Permission p2 = findModulePermission(m, alModuleSecond);
+		for (String modulo : SYSTEM_MODULES) {
+			Permission permission1 = findModulePermission(modulo, alModuleFirst);
+			Permission permission2 = findModulePermission(modulo, alModuleSecond);
 			Module module = new Module();
-			module.setName(m);
-			module.setPermission(Permission.getHighest(p1, p2));
+			module.setName(modulo);
+			module.setPermission(Permission.getHighest(permission1, permission2));
 			aModules.add(module);
 		}
 		
@@ -41,9 +41,9 @@ public class Module {
 	}
 	
 	private static Permission findModulePermission(String moduleName, ArrayList<Module> modules) {
-		for (Module m : modules ) {
-			if (m.name.equals(moduleName)){
-				return m.permission;
+		for (Module modulo : modules ) {
+			if (modulo.name.equals(moduleName)){
+				return modulo.permission;
 			}
 		}
 		return Permission.None;

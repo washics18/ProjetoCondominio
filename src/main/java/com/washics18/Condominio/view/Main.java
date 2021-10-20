@@ -1,24 +1,19 @@
-package com.washics18.Condominio;
-
+package com.washics18.Condominio.view;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.swing.JOptionPane;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import com.washics18.Condominio.dao.Reader;
-import com.washics18.Condominio.model.Module;
 import com.washics18.Condominio.model.User;
+import com.washics18.Condominio.model.Module;
 
-@SpringBootApplication
-public class CondominioApplication {
+
+
+public class Main {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CondominioApplication.class, args);
-		
 		User user = null;
 		HashMap<String, ArrayList<Module>> userPermissionByCondo = null;
 		try {

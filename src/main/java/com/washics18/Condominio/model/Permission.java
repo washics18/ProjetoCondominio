@@ -21,37 +21,37 @@ public enum Permission {
 	}
 
 	public static int getValueByLabel(String label) {
-		for (Permission p : values()) {
-			if (p.label.equals(label)) {
-				return p.value;
+		for (Permission permission : values()) {
+			if (permission.label.equals(label)) {
+				return permission.value;
 			}
 		}
 		return 0;
 	}
 	
 	public static Permission getByLabel(String label) {
-		for (Permission p : values()) {
-			if (p.label.equals(label)) {
-				return p;
+		for (Permission permission : values()) {
+			if (permission.label.equals(label)) {
+				return permission;
 			}
 		}
 		return null;
 	}
 
 	public Permission getValueByValue(int value) {
-		for (Permission p : values()) {
-			if (p.getValue() == value) {
-				return p;
+		for (Permission permission : values()) {
+			if (permission.getValue() == value) {
+				return permission;
 			}
 		}
 		return null;
 	}
 
-	public static Permission getHighest(Permission p1, Permission p2) {
-		if (p1.getValue() >= p2.getValue()) {
-			return p1;
+	public static Permission getHighest(Permission permission1, Permission permission2) {
+		if (permission1.getValue() >= permission2.getValue()) {
+			return permission1;
 		} else {
-			return p2;
+			return permission2;
 		}
 	}
 
