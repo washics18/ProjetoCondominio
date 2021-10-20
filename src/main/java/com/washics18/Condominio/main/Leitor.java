@@ -12,6 +12,7 @@ import java.util.Map.Entry;
 import javax.swing.JOptionPane;
 
 import com.washics18.Condominio.permissao.Permissoes;
+import com.washics18.Condominio.replace.Replace;
 
 
 public class Leitor {
@@ -42,7 +43,7 @@ public class Leitor {
 			listaPermissoesCondominio = getListaPermissoes(tipoGrupoCondominio);
 			
 			for (Entry<String, String> permissoes : listaPermissoesCondominio.entrySet()) {
-				System.out.println(permissoes.getKey() + ";" + "[" + changeSemiColonToComma(permissoes.getValue()) + "]");
+				System.out.println(permissoes.getKey() + ";" + "[" + Replace.changeSemiColonToComma(permissoes.getValue()) + "]");
 			}
 			
 			fstream.close();
@@ -73,7 +74,7 @@ public class Leitor {
 					for (String el : pTipoGrupoCondominio) {
 						if (readTpGrupoCondominio.equals(el)) {
 							HashMap<String, String> hash = new HashMap<String, String>();
-							hash.put(readLine[2], removeBrackets(readLine[3]));
+							hash.put(readLine[2], Replace.removeBrackets(readLine[3]));
 							listCondominioPermissoes.add(hash);
 						}
 					}
@@ -95,7 +96,7 @@ public class Leitor {
 
 		for (HashMap<String, String> el : pListCondominioPermissoes) {
 			condominioAtual = el.keySet().toString(); 
-			condominioAtual = removeBrackets(condominioAtual.toString());
+			condominioAtual = Replace.removeBrackets(condominioAtual.toString());
 			
 			if (hash.containsKey(condominioAtual)) {
 				String[] permissoes0 = hash.get(condominioAtual).split(";");
@@ -122,10 +123,10 @@ public class Leitor {
 
 		for (int i = 0; i < cont; i++) {
 			if (permissoes0size > i) {
-				a.addAll(Arrays.asList(removeParentheses(permissoes0[i]).split(","))) ; // [Reserva, Escrita, Entregas, Nenhuma, Usuario, Leitura]
+				a.addAll(Arrays.asList(Replace.removeParentheses(permissoes0[i]).split(","))) ; // [Reserva, Escrita, Entregas, Nenhuma, Usuario, Leitura]
 			} 
 			if (permissoes1size > i) {
-				b.addAll(Arrays.asList(removeParentheses(permissoes1[i]).split(","))) ;
+				b.addAll(Arrays.asList(Replace.removeParentheses(permissoes1[i]).split(","))) ;
 			}
 		}
 
@@ -157,24 +158,9 @@ public class Leitor {
 			todasAsPermissoes.add(permissao);
 		}
 	
-		return removeBrackets(changeCommaToSemiColon(todasAsPermissoes.toString()));
+		return Replace.removeBrackets(Replace.changeCommaToSemiColon(todasAsPermissoes.toString()));
 	}
 
-	private static String changeCommaToSemiColon (String value) {
-		return value.replace("), (", ");(");
-	}
-	
-	private static String changeSemiColonToComma (String value) {
-		return value.replace(");(", "),(");
-	}
-	
-	private static String removeParentheses(String value) {
-		return value.replace("(", "").replace(")", "");
-	}
-	
-	private static String removeBrackets(String value) {
-		return value.replace("[", "").replace("]", "");
-	}
 	
 		
 }
