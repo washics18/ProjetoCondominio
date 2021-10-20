@@ -1,0 +1,12 @@
+Usuario;rodrigo.soares@gmail.com;[(Morador,1),(Porteiro,1)]
+Usuario;maria.silva.sindica@gmail.com;[(Morador,1),(Sindico,1)]
+Usuario;joao.costa@gmail.com;[(Morador,1),(Sindico,1),(Sindico,2),(Morador,2),(Porteiro,1)]
+Usuario;roberta.souzas@gmail.com;[(Morador,2),(Sindico,2),(Morador,1)]
+Usuario;marcos.dutra@gmail.com;[(Morador,2),(Sindico,1)]
+
+Grupo;Morador;1;[(Reservas,Escrita),(Entregas,Nenhuma),(Usuarios,Leitura)]
+Grupo;Morador;2;[(Reservas,Escrita),(Entregas,Leitura),(Usuarios,Leitura)]
+Grupo;Sindico;1;[(Reservas,Leitura),(Entregas,Leitura),(Usuarios,Escrita),(ModuloNovo,Leitura)]
+Grupo;Sindico;2;[(Reservas,Escrita),(Entregas,Leitura),(Usuarios,Escrita),(ModuloNovo,Leitura)]
+Grupo;Porteiro;1;[(Reservas,Nenhuma),(Entregas,Escrita),(Usuarios,Nenhuma),(ModuloNovo,Escrita)]
+Grupo;Porteiro;2;[(Reservas,Leitura),(Entregas,Escrita),(Usuarios,Leitura)]
